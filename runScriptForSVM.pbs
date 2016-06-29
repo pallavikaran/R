@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#PBS -N ParComp
+#PBS -l select=1:ncpus=5:mem=2gb
+#PBS -l walltime=01:00:00
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+echo $PBS_O_WORKDIR
+
+# Load R.3.2.2 module
+module add R/3.2.2
+
+# Run R script 
+time Rscript SVMHW.R
